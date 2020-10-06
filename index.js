@@ -6,6 +6,9 @@ const connectMongoDB = require("./config/db");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// routes
+app.use("/auth/", require("./routes/user"));
+
 // connect to mongo driver
 connectMongoDB().catch(console.dir);
 
